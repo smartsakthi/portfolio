@@ -18,32 +18,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script>
-  gsap.from(".fade-in", { opacity: 0, y: 30, duration: 1, stagger: 0.3 });
-</script>
-	
-	<script>
-  window.addEventListener("load", function () {
-    // Wait for splash animation to end (2s fade delay + 2s animation)
-    setTimeout(() => {
-      document.getElementById("splash-screen").style.display = "none";
-      document.getElementById("main-content").style.display = "block";
-    }, 4000); // 4 seconds total
-  });
-</script>
 
-	<!-- Splash Screen -->
-<div id="splash-screen">
-  <div class="splash-content">
-    <h1>My Website</h1>
-  </div>
-</div>
-
-<!-- Your existing content -->
-<div id="main-content" style="display: none;">
-  <!-- All your current HTML goes here -->
-</div>
 
 
 <body>
