@@ -80,6 +80,47 @@ button:focus {
 
 .mt-50 {
   margin-top: 50px; }
+  
+  
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+.delay-2 {
+  animation-delay: 1s;
+}
+.delay-3 {
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}  
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+  
 
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
@@ -132,6 +173,63 @@ button:focus {
   .main_title.white p {
     color: #fff;
     opacity: .6; }
+    
+
+.hover-area {
+   
+    }
+
+    .cursor-image {
+      position: fixed;
+      width: 120px;
+      height: auto;
+      pointer-events: none;
+      opacity: 0;
+      transform: scale(2);
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        left 0.1s ease,
+        top 0.1s ease;
+      z-index: 1000;
+    }
+    .cursor-image.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+
+
+.typewriter p {
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+<style>
+.scroll-down-indicator {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2em;
+  animation: bounce 2s infinite;
+  color: #333; /* or any color you prefer */
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); 
+  }
+  40% {
+    transform: translateY(10px); 
+  }
+  60% {
+    transform: translateY(5px); 
+  }
+}
+</style>
+
+ 
 
 /* End Main Title Area css
 ============================================================================================ */
