@@ -16,21 +16,71 @@
 	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
 </head>
 
+	<!--================ Start Header Area =================-->
+
+<script>
+    // Wait for DOM to be fully loaded
+    window.addEventListener("DOMContentLoaded", () => {
+      const el = document.getElementById("myText");
+      const fullText = el.textContent;
+      el.textContent = ""; // Clear existing text
+
+      let i = 0;
+
+      function typeText() {
+        if (i < fullText.length) {
+          el.textContent += fullText.charAt(i);
+          i++;
+          setTimeout(typeText, 200); // Typing speed in ms
+        }
+      }
+
+      typeText(); // Start typing
+    });
+  </script>
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+  gsap.from(".fade-in", { opacity: 0, y: 30, duration: 1, stagger: 0.3 });
+</script>
+	
+<script>
+    const hoverArea = document.querySelector('.hover-area');
+    const cursorImage = document.getElementById('cursorImage');
 
-<body>
+    hoverArea.addEventListener('mouseenter', () => {
+      cursorImage.classList.add('show');
+    });
+
+    hoverArea.addEventListener('mouseleave', () => {
+      cursorImage.classList.remove('show');
+    });
+
+    hoverArea.addEventListener('mousemove', (e) => {
+      cursorImage.style.left = e.clientX + 10 + 'px';
+      cursorImage.style.top = e.clientY + 10 + 'px';
+    });
+  </script>
 	
 
-	<!--================ Start Header Area =================-->
+	
 	<header class="header_area">
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+					<a class="navbar-brand logo_h fade-in" href="index.html"><img src="img/logo.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">	
 						<span class="icon-bar"></span>
@@ -40,7 +90,7 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item active fade-in"><a class="nav-link" href="index.html">Home</a></li>
 							
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
@@ -52,7 +102,7 @@
 								<ul class="dropdown-menu">
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item fade-in"><a class="nav-link" href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -69,7 +119,7 @@
 					<div class="col-lg-7">
 						<div class="banner_content">
 
-						<h2 class="text-uppercase">
+						<h2 class="text-uppercase fade-in">
   Hi There <span class="wave">👋</span>
 </h2>
 
@@ -92,17 +142,18 @@
   100% { transform: rotate(0deg); }
 }
 </style>
-
-							<h1 class="text-uppercase">I'm Sakthivel</h1>
-							<h5 class="text-uppercase">System administrator / UI Designer</h5>
+                                                        <div class="landing">
+							<h1 class="text-uppercase fade-in delay-1">I'm Sakthivel</h1>
+							<h5 class="text-uppercase fade-in delay-2">System administrator / UI Designer</h5>
 							<div class="d-flex align-items-center">
+							</div>
 								
-								<a class="primary_btn tr-bg" href="//smartsakthi.github.io/portfolio/Sakthi%20CV.pdf" target="_blank"><span>Get CV</span></a>
+								<a class="primary_btn tr-bg fade-in delay-3" href="//smartsakthi.github.io/portfolio/Sakthi%20CV.pdf" target="_blank"><span>Get CV</span></a>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-5">
-						<div class="home_right_img">
+						<div class="home_right_img fade-in delay-1">
 							<img class="" src="img/banner/home-right.png" alt="">
 						</div>
 					</div>
@@ -110,46 +161,80 @@
 			</div>
 		</div>
 	</section>
+
+
 	<!--================ End Home Banner Area =================-->
 
 	<!--================ Start About Us Area =================-->
+	
 	<section class="about_area section_gap">
+		  <section data-aos="fade-up">
 		<div class="container">
 			<div class="row justify-content-start align-items-center">
 				<div class="col-lg-5">
-					<div class="about_img">
+					<div class="about_img fade-in delay-1 hover-area">
 						<img class="" src="img/about-us.png" alt="">
 					</div>
 				</div>
 
-				<div class="offset-lg-1 col-lg-5">
-					<div class="main_title text-left">
-						<h2>let’s <br>
-							Introduce about <br>
-							myself
-						</h2>
-						<p>
-							Hi, I’m Sakthivel — a UI Designer with 2 years of experience creating clean, user-focused web and mobile interfaces. 
-							I come from an IT support background, where I spent 1 year managing systems, resolving technical issues, and ensuring smooth operations for users.
-							My unique mix of technical and design skills allows me to create intuitive, accessible designs that are not only visually appealing but also practical and 
-							user-friendly. I’ve worked on projects involving responsive design, prototyping in Figma, and collaborating with cross-functional teams to bring digital products to life.
-                            
-						</p>
-						<p>
-							I'm passionate about continuous learning, solving real-world problems through design, and always aiming to improve the user experience. 
-							I’m excited to contribute my skills to meaningful projects and grow further as a designer.
-							
-						</p>
+<div class="offset-lg-1 col-lg-5 fade-in delay-1 typewriter">
+					
+
+<div class="main_title text-left">
+  <h2 id="myText">
+    let’s Introduce about myself
+  </h2>
+
+  <div class="typewriter">
+    <p id="typingText"></p><span class="cursor"></span>
+  </div>
+</div>
+
+<script>
+  const text = `
+Hi, I’m Sakthivel — a UI Designer with 2 years of experience creating clean, user-focused web and mobile interfaces. 
+I come from an IT support background, where I spent 1 year managing systems, resolving technical issues, and ensuring smooth operations for users.
+My unique mix of technical and design skills allows me to create intuitive, accessible designs that are not only visually appealing but also practical and user-friendly. 
+I’ve worked on projects involving responsive design, prototyping in Figma, and collaborating with cross-functional teams to bring digital products to life.
+
+I'm passionate about continuous learning, solving real-world problems through design, and always aiming to improve the user experience. 
+I’m excited to contribute my skills to meaningful projects and grow further as a designer.
+`;
+
+  const typingElement = document.getElementById('typingText');
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      typingElement.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 50); // Typing speed (adjust if needed)
+    }
+  }
+
+  // Delay typing by 10 seconds (10,000 milliseconds)
+  window.onload = function () {
+    setTimeout(typeWriter, 10000);
+  };
+</script>
+					
+
 						<a class="primary_btn" href="//smartsakthi.github.io/portfolio/Sakthi%20CV.pdf" target="_blank"><span>Download CV</span></a>
 					</div>
 				</div>
 			</div>
 		</div>
+		</section>
 	</section>
+
+
 	<!--================ End About Us Area =================-->
 
 	<!--================ Srart Brand Area =================-->
+	
 	<section class="brand_area section_gap_bottom">
+		<section data-aos="zoom-in-up">
+			    
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6">
@@ -158,12 +243,12 @@
 				                        <div class="offset-lg-18 col-lg-14 col-md-36">
 					                        <div class="client-info">
 						                        <div class="d-flex mb-150">
-							                           <span class="lage">3+</span>
+							                           <span class="lage fade-in delay-1">3+</span>
 													   <div class="main_title text-left">
-														<span class="smll">Years</span><br>
-														<span class="smll">Experience</span><br>
-														<span class="smll">Working</span><br>
-														<span class="smll">AT TATA Consultancy services as SYS Admin & UI/UX Designer</span>
+														<span class="smll fade-in delay-1">Years</span><br>
+														<span class="smll fade-in delay-1">Experience</span><br>
+														<span class="smll fade-in delay-1">Working</span><br>
+														<span class="smll fade-in delay-1">AT TATA Consultancy services as SYS Admin & UI/UX Designer</span>
 													   </div>
 							                          
 							
@@ -174,15 +259,23 @@
 				                        </div>
 			                        </div>
 		                        </div>
+							</section>
 </section>
+
+
+
+
+
+
 	<!--================ End Brand Area =================-->
 
 	<!--================ Start Features Area =================-->
 	<section class="features_area">
+		<section data-aos="zoom-out-up">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
-					<div class="main_title">
+					<div class="main_title fade-in delay-2">
 						<h2>Working tools </h2>
 						<p>
 							Is give may shall likeness made yielding spirit a itself togeth created 
@@ -191,7 +284,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row feature_inner">
+			<div class="row feature_inner fade-in delay-1">
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
 						<img src="img/services/s1.png" alt="">
@@ -222,19 +315,21 @@
 				</div>
 			</div>
 		</div>
+		</section>
 	</section>
 	<!--================ End Features Area =================-->
 
 	<!--================Footer Area =================-->
 	<footer class="footer_area">
+		<section data-aos="zoom-in-up">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-12">
 					<div class="footer_top flex-column">
-						<div class="footer_logo">
+						<div class="footer_logo fade-in delay-1">
                               <h4>Follow Me</h4>
 						</div>
-						<div class="footer_social">
+						<div class="footer_social fade-in delay-1">
 							 
 							  <a href="https://www.linkedin.com/in/s-sakthivel/" target="_blank"><i class="fa fa-linkedin"></i></a>
 
@@ -252,6 +347,7 @@
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -268,6 +364,15 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/theme.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init(); // Initialize AOS
+  </script>
 </body>
+
+
+</div>
+</body>
+
 
 </html>
