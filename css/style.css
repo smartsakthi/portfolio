@@ -436,6 +436,27 @@ button:focus {
   display: -ms-flexbox;
   display: flex; }
 
+.underline-hover {
+      position: relative;
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .underline-hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #3b55e9;
+      transition: width 0.3s ease;
+    }
+
+    .underline-hover:hover::after {
+      width: 100%;
+    }
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /* Home Banner Area css
