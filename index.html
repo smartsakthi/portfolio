@@ -18,7 +18,10 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+<div class="welcome-popup" id="welcomePopup">
+    👋 Glad you visited my portfolio — thank you! 😀
+  </div>
+</head>
 
 </head>
 
@@ -227,7 +230,49 @@ I’m excited to contribute my skills to meaningful projects and grow further as
 		</section>
 	</section>
 
+<style>
+    .welcome-popup {
+      position: fixed;
+      top: 120px;
+      left: 750px;
+      background-color: #ffffff;
+      color: #333;
+      padding: 15px 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      font-family: sans-serif;
+      font-size: 16px;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 9999;
+    }
 
+    .welcome-popup.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .welcome-popup.hide {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  </style>
+
+<script>
+    const popup = document.getElementById('welcomePopup');
+
+    // Show the popup with animation
+    setTimeout(() => {
+      popup.classList.add('show');
+    }, 100); // slight delay for transition
+
+    // Hide the popup after 3 seconds
+    setTimeout(() => {
+      popup.classList.remove('show');
+      popup.classList.add('hide');
+    }, 3100); // 3 seconds after it's shown
+  </script>
 	<!--================ End About Us Area =================-->
 
 	<!--================ Srart Brand Area =================-->
