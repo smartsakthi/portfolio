@@ -35,6 +35,11 @@ body {
   cursor: url(../img/cursor.png), auto;
   
 }
+a, button {
+  cursor: pointer;
+  cursor: url(../img/pointer.png), auto;
+}
+
 
 h1,
 h2,
