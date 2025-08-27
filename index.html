@@ -182,11 +182,8 @@
 
 <div class="offset-lg-1 col-lg-5 fade-in delay-1 typewriter">
 					
-
-<div class="main_title text-left">
-  <h2 id="myText">
-    let’s Introduce about myself
-  </h2>
+<div class="main_title text-left typingText">
+  <h2 id="headerText"></h2> <!-- Updated to be empty and given an ID -->
 
   <div class="typewriter">
     <p id="typingText"></p><span class="cursor"></span>
@@ -194,6 +191,7 @@
 </div>
 
 <script>
+  const header = "Let’s Introduce about myself";
   const text = `
 Hi, I’m Sakthivel — a UI Designer with 2 years of experience creating clean, user-focused web and mobile interfaces. 
 I come from an IT support background, where I spent 1 year managing systems, resolving technical issues, and ensuring smooth operations for users.
@@ -204,22 +202,46 @@ I'm passionate about continuous learning, solving real-world problems through de
 I’m excited to contribute my skills to meaningful projects and grow further as a designer.
 `;
 
+  const headerElement = document.getElementById('headerText');
   const typingElement = document.getElementById('typingText');
-  let index = 0;
 
-  function typeWriter() {
-    if (index < text.length) {
-      typingElement.textContent += text.charAt(index);
-      index++;
-      setTimeout(typeWriter, 50); // Typing speed (adjust if needed)
+  let headerIndex = 0;
+  let textIndex = 0;
+  let hasTyped = false; // to prevent re-triggering on scroll
+
+  function typeHeader() {
+    if (headerIndex < header.length) {
+      headerElement.textContent += header.charAt(headerIndex);
+      headerIndex++;
+      setTimeout(typeHeader, 100);
+    } else {
+      setTimeout(typeWriter, 1000);
     }
   }
 
-  // Delay typing by 10 seconds (10,000 milliseconds)
-  window.onload = function () {
-    setTimeout(typeWriter, 10000);
-  };
-</script>
+  function typeWriter() {
+    if (textIndex < text.length) {
+      typingElement.textContent += text.charAt(textIndex);
+      textIndex++;
+      setTimeout(typeWriter, 60);
+    }
+  }
+
+  // Observe when .main_title is visible
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasTyped) {
+        hasTyped = true; // prevent multiple triggers
+        typeHeader();
+        observer.unobserve(entry.target); // stop observing
+      }
+    });
+  }, { threshold: 0.5 }); // 50% visible
+
+  const target = document.querySelector('.main_title');
+  observer.observe(target);
+</script> 
+
 					
 
 						<a class="primary_btn" href="//smartsakthi.github.io/portfolio/Mr%20Sakthivel_UI%20Designer_Resume.pdf" target="_blank"><span>Download CV</span></a>
