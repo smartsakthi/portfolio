@@ -22,6 +22,8 @@ body {
   color: #777777;
   background: url(../img/body-bg.png) no-repeat center;
   cursor: url(../img/cursor.png), auto;
+  max-width: 100%;
+  overflow-x: hidden;
   
 }
 a, button {
